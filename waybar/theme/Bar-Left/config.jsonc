@@ -1,0 +1,91 @@
+{
+  "layer": "top",
+  "position": "left",
+  //"width": 20,
+  "spacing": 4,
+  "margin-top": 6,
+  "margin-left": 6,
+  "margin-bottom": 6,
+  "margin-right": 0,
+  "reload_style_on_change": true,
+  "modules-left": [
+    //"power-profiles-daemon",
+    //"backlight",
+    "network",
+    "battery",
+    "pulseaudio"
+    //"clock"
+  ],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": ["custom/day-progress"],
+
+  "custom/day-progress": {
+    "format": "{}",
+    "exec": "~/.config/waybar/scripts/day-progress.sh",
+    "return-type": "json",
+    "interval": 60
+  },
+
+  "clock": {
+    "format": "{:%H%M}",
+    "tooltip-format": "{:%m-%d / %H%M}"
+    //"on-click": "swaync-client -t -sw"
+  },
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    //"on-click": "activate",
+    "format-icons": {
+      "active": "█",
+      //"persistent": "▅",
+      "empty": "█",
+      "default": "█"
+    },
+    //"sort-by-number": true,
+    "persistent-workspaces": { "*": 4 }
+  },
+
+  "pulseaudio": {
+    "format": "{icon}",
+    "format-bluetooth": "{icon}",
+    "format-bluetooth-muted": "▀",
+    "format-muted": "▀",
+    "format-source": "MIC {volume}",
+    "scroll-step": 2,
+    "tooltip-format": "{desc} / {volume}",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-click-right": "pavucontrol",
+    "format-icons": ["█"],
+    "states": {
+      "stereo": 40,
+      "bt": 70
+    }
+  },
+
+  "network": {
+  //"interface": "wlp2*", // (Optional) To force the use of this>
+    "format-wifi": "{icon}",
+    "format-ethernet": "[{ipaddr}/{cidr}]",
+    "tooltip-format": "{essid} / {signalStrength}",
+    "on-click-right": "kitty -e nmtui",
+  //"format-linked": "{ifname} (No IP)",
+    "format-linked": "{icon}",
+    "format-disconnected": "■",
+  //"format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "format-icons": ["█"],
+  },
+
+  "battery": {
+    "format": "{icon}",
+    "format-charging": "{icon}",
+    "format-plugged": "{icon}",
+    "tooltip-format": "{} / {capacity}",
+    "on-click-right": "kitty -e btop",
+    "format-icons": ["█", "█\n█"],
+    "states": {
+      "charge": 30,
+      //"okay": 50,
+      "full": 80
+    }
+  }
+}

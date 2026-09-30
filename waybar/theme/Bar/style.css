@@ -1,0 +1,87 @@
+@import 'colors.css';
+
+* {
+  font-family: 'JetBrainsMono Nerd Font';
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  padding: 0px 3px 0px 2px;
+}
+
+window#waybar {
+  background: rgba(0, 0, 0, 0.8);
+  /*border: 0px solid #ffffff;*/ /* 🟢 Border color (match this with window border color) */
+  border-radius: 3px;         /* For retro look */
+  margin: 10px 10px;          /* Top/Bottom, Left/Right */
+  padding: 4px;
+}
+
+tooltip {
+    padding: 8px;
+    border-radius: 4px;
+    color: @accent-bright;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+button {
+  /* Use box-shadow instead of border so the text isn't offset */
+  box-shadow: inset 0 -3px transparent;
+  background: transparent;
+  /* Avoid rounded borders under each button name */
+  border: none;
+  border-radius: 0;
+}
+
+#workspaces button {
+  padding: 0px 0px 0px 0px;
+  color: @accent;
+}
+
+#workspaces button.active {
+  color: @accent-bright;
+}
+
+#workspaces button:hover {
+  color: @accent;
+}
+
+#battery.low, #pulseaudio.low, #network.low, #custom-day-progress.low, #mpris.paused {
+  color: @accent;
+}
+
+#battery.medium, #pulseaudio.medium, #network.medium, #custom-day-progress.medium {
+  color: @accent;
+}
+
+#battery.high, #pulseaudio.high, #network.high, #custom-day-progress.high, #mpris.playing {
+  color: @accent-bright;
+}
+
+#battery, #pulseaudio, #network, #clock, #mpris, #custom-day-progress {
+  color: @accent-bright;
+}
+
+
+#clock,
+#battery,
+#pulseaudio,
+#backlight,
+#network,
+#idle_inhibitor,
+#power-profiles-daemon,
+#tray,
+#mpris,
+#custom-power,
+#workspaces {
+}
+
+#custom-test {
+  font-family: Material Symbols Rounded;
+  font-size: 20px;
+}
+
+#clock {
+  font-family: undefined;
+  font-size: 20px;
+  font-weight: 800;
+}

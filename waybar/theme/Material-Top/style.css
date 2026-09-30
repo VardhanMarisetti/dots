@@ -1,0 +1,75 @@
+@import 'colors.css';
+
+window#waybar {
+  background: transparent;
+}
+
+tooltip {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 4px;
+  color: @accent-bright;
+  font-family: JetBrainsMono Nerd Font;
+  font-weight: bold;
+}
+
+#workspaces {
+  font-family: JetBrainsMono Nerd Font;
+  font-weight: bold;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+#clock {
+  font-size: 18px;
+  padding: 0px 8px;
+  font-family: Undefined;
+  font-weight: bolder;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+#workspaces button {
+  color: @accent;
+}
+
+#workspaces button.active {
+  color: rgba(0, 0, 0, 0.8);
+  background-color: @accent-bright;
+  padding: 2px 8px;
+  margin: 3px;
+}
+
+#network,
+#bluetooth,
+#battery {
+  background-color: rgba(0, 0, 0, 0.8);
+  font-size: 20px;
+  padding: 0px 10px;
+  color: @accent-bright;
+  font-family: Material Symbols Rounded;
+}
+
+#network {
+  border-radius: 4px 0px 0px 4px;
+}
+
+#bluetooth {
+  border-radius: 0px;
+  padding: 0px 10px;
+}
+
+#battery {
+  border-radius: 0px 4px 4px 0px;
+}
+
+#battery.plugged {
+  color: #a3be8c;
+}
+
+#battery.warning {
+  color: #ebcb8b;
+}
+
+#battery.critical {
+  color: #bf616a;
+}

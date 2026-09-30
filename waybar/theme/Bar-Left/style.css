@@ -1,0 +1,81 @@
+@import 'colors.css';
+
+* {
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  padding: 1px;
+}
+
+window#waybar {
+  background: rgba(0, 0, 0, 0.8);
+  /*border: 0px solid #ffffff;*/ /* 🟢 Border color (match this with window border color) */
+  border-radius: 4px;         /* For retro look */
+  margin: 10px 10px;          /* Top/Bottom, Left/Right */
+  padding: 4px;
+}
+
+tooltip {
+    padding: 8px;
+    border-radius: 4px;
+    color: @accent-bright;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+tooltip label {
+    font-size: 15px;
+  padding: 0px 4px;
+}
+
+#workspaces button {
+  color: @accent;
+}
+
+/* #workspaces button.active {
+  color: @accent-bright;
+} */
+
+#workspaces button.empty {
+  color: @accent-dark;
+}
+
+#workspaces button.visible {
+  color: @accent-bright;
+}
+
+#workspaces button:hover {
+  color: @accent-bright;
+}
+
+#battery.charge, #pulseaudio.stereo, #mpris.paused {
+  color: @accent-dark;
+}
+
+#battery.full, #pulseaudio.bt, #custom-day-progress {
+  color: @accent;
+}
+
+#mpris.playing {
+  color: @accent-bright;
+}
+
+#battery, #pulseaudio, #network, #clock, #mpris {
+  color: @accent-bright;
+}
+
+#clock,
+#battery,
+#pulseaudio,
+#backlight,
+#network,
+#workspaces {
+}
+
+#network {
+  margin-top: 2px;
+}
+
+#custom-day-progress {
+  margin-bottom: 2px;
+}

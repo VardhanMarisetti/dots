@@ -1,0 +1,72 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 37,
+    "spacing": 0,
+    "reload_style_on_change": true,
+    //"margin-top": 6,
+    //"margin-left": 6,
+    //"margin-right": 6,
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["custom/vol", "pulseaudio", "custom/close", "custom/net", "network","custom/close","custom/bat", "battery", "custom/close"],
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "format": "{name}{icon}",
+        "format-icons": {
+            "default": "°",
+            "empty": " ",
+            "active": " "
+        },
+        "persistent-workspaces": { "*": 4 }
+    },
+
+    "custom/close": {
+        "format": "] ",
+        "tooltip": false
+    },
+
+    "custom/vol": {
+        "format": "[VOL ",
+        "tooltip": false
+    },
+
+    "custom/net": {
+        "format": "[NET ",
+        "tooltip": false
+    },
+
+    "custom/bat": {
+        "format": "[BAT ",
+        "tooltip": false
+    },
+
+    "clock": {
+        //"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%H%M}",
+        "tooltip-format": "{:%m-%d / %H%M}"
+    },
+
+    "pulseaudio": {
+        //"format": "[<span color='#a3877f'><b>VOL:</b></span> {volume}]",
+        //"format-muted": "[<span color='#a3877f'><b>VOL:</b></span> MUTE]",
+        "format": "{volume}",
+        "format-muted": "MUTE",
+        "tooltip-format": "{desc} / {volume}"
+    },
+
+    "network": {
+        //"format": "[<span color='#a3877f'><b>NET:</b></span> {essid}]",
+        "format": "{signalStrength}",
+        "tooltip-format": "{essid} / {signalStrength}"
+    },
+    
+    "battery": {
+        //"format": "[<span color='#a3877f'><b>BAT:</b></span> {capacity}]",
+        //"format-charging": "[<span color='#a3877f'><b>AC:</b></span> {capacity}]",
+        "format": "{capacity}",
+        "format-charging": "{capacity}",
+        "tooltip-format": "{} / {capacity}"
+    }
+}

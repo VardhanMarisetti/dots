@@ -1,0 +1,62 @@
+@import 'colors.css';
+
+* {
+  font-family: JetBrainsMono Nerd Font;
+  border: none;
+  padding: 2px;
+}
+
+window#waybar {
+  background: rgba(0, 0, 0, 0.8);
+  /*border: 0px solid #ffffff;*/ /* 🟢 Border color (match this with window border color) */
+  border-radius: 0px;
+}
+
+tooltip {
+  font-size: 16px;
+  margin: 10px;
+  border-radius: 4px;
+  color: @accent-bright;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+#clock {
+  font-size: 18px;
+  font-weight: bolder;
+  color: @accent-bright;
+  font-family: JetBrainsMono Nerd Font;
+}
+
+#workspaces button {
+  font-size: 1px;
+  min-height: 1px;
+  min-width: 11px;
+  padding: 0px;
+  margin: 7px 5px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, @accent-bright 70%, @accent 100%);
+  transition: all 0.1s ease-in-out;
+}
+
+#workspaces button.empty {
+  background: linear-gradient(90deg, @accent 40%, @accent-dark 100%);
+}
+
+#workspaces button.visible {
+  background: linear-gradient(90deg, @accent-bright 70%, @accent 100%);
+  min-width: 40px; /* The "Long Pill" effect */
+}
+
+#workspaces button:hover {
+  color: @accent-bright;
+  background: linear-gradient(90deg, @accent-bright 0%, @accent 100%);
+}
+
+#network,
+#pulseaudio,
+#backlight,
+#battery {
+  font-size: 18px;
+  color: @accent-bright;
+  font-family: Material Symbols Rounded;
+}

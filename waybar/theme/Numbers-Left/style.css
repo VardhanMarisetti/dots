@@ -1,0 +1,76 @@
+@import 'colors.css';
+
+* {
+  font-family: JetBrainsMono Nerd Font;
+  font-weight: bold;
+  padding: 0px 2.5px;
+}
+
+window#waybar {
+  background: rgba(0, 0, 0, 0.8);
+  /*border: 0px solid #ffffff;*/ /* 🟢 Border color (match this with window border color) */
+  border-radius: 4px;         /* For retro look */
+  border: 1px solid;
+  border-color: @accent-bright;
+}
+
+tooltip {
+  font-size: 15px;
+  padding: 8px;
+  border-radius: 4px;
+  color: @accent-bright;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+#workspaces button {
+  font-size: 20px;
+  color: @accent-dark;
+  padding: 15px 2px 15px 0px;
+}
+
+#workspaces button.empty {
+  color: @accent-dark;
+}
+
+#workspaces button.visible {
+  color: @accent-bright;
+}
+
+#workspaces button:hover {
+  color: @accent-bright;
+}
+
+#clock {
+  font-size: 20px;
+  color: @accent-bright;
+  margin-bottom: 3px;
+  /* border: 1px solid;
+  border-color: @accent-bright; */
+}
+
+#battery, #pulseaudio {
+  font-size: 20px;
+  color: @accent-bright;
+}
+
+#battery {
+  /* border: 1px solid;
+  border-bottom: 0px;
+  border-color: @accent-bright;
+  border-radius: 4px 4px 0px 0px; */
+  margin-top: 3px;
+}
+
+#pulseaudio {
+  padding-bottom: 0px;
+  /* border: 1px solid;
+  border-top: 0px;
+  border-color: @accent-bright;
+  border-radius: 0px 0px 4px 4px; */
+}
+
+#network {
+  margin-top: 0px;
+  padding-bottom: 0px;
+  color: @accent;
+}

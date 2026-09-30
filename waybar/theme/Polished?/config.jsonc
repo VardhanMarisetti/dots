@@ -1,0 +1,115 @@
+{
+  "layer": "top",
+  "position": "bottom",
+  "spacing": 10,
+  "margin-top": 0,
+  "margin-left": 6,
+  "margin-bottom": 6,
+  "margin-right": 6,
+  //"margin-right": -16,
+  "reload_style_on_change": true,
+  "modules-left": [
+  ],
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
+  "modules-right": [
+    "network",
+    "pulseaudio",
+    "battery",
+    "clock"
+  ],
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "all-outputs": true,
+    "active-first": true,
+    "tooltip-format": "{name}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "ignore-list": [
+      "rofi"
+    ]
+  },
+  "network": {
+    "format-disabled": "",
+    "format-wifi": "{icon}",
+    "format-ethernet": "lan",
+    "format-disconnected": "signal_wifi_off",
+    "format-icons": [
+      "signal_wifi_0_bar",
+      "network_wifi_1_bar",
+      "network_wifi_2_bar",
+      "network_wifi_3_bar",
+      "signal_wifi_4_bar"
+    ],
+    "tooltip-format": "{essid} - {signalStrength}%",
+    "on-click-right": "kitty -e nmtui"
+  },
+  "pulseaudio": {
+    "format": "{icon}",
+    "format-bluetooth": "headphones",
+    "format-muted": "volume_off",
+    "format-bluetooth-muted": "headset_off",
+    "tooltip-format": "{desc} / {volume}",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-click-right": "kitty -e wiremix",
+    "format-icons": [
+      "volume_down",
+      "volume_up"
+    ]
+  },
+  "battery": {
+    "format": "{icon}",
+    "format-icons": [
+      "battery_android_0",
+      "battery_android_1",
+      "battery_android_2",
+      "battery_android_3",
+      "battery_android_4",
+      "battery_android_5",
+      "battery_android_6",
+      "battery_android_full"
+    ],
+    "tooltip-format": "{timeTo} - {capacity}%",
+    "on-click": "kitty -e btop",
+    "states": {
+      "warning": 20,
+      "critical": 10
+    }
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    //"on-click": "activate",
+    "format-icons": {
+      "active": "●",
+      //"persistent": "◉▅",
+      "empty": "○",
+      "default": "●"
+      },
+    "persistent-workspaces": {
+      "*": 4
+    }
+  },
+  "backlight": {
+    "format": "{icon}",
+    "tooltip-format": "Display / {percent}",
+    "format-icons": [
+      "brightness_1",
+      "brightness_2",
+      "brightness_3",
+      "brightness_4",
+      "brightness_5",
+      "brightness_6",
+      "brightness_7"
+    ]
+  },
+  "clock": {
+    "format": "{:%H%M}",
+    "tooltip-format": "{calendar}",
+    "calendar": {
+      "format": {
+        "today": "<u>{}</u>"
+      }
+    }
+  }
+}

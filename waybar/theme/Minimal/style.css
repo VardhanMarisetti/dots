@@ -1,0 +1,52 @@
+@import 'colors.css';
+
+* {
+    font-family: "Undefined";
+    font-size: 18px;
+    font-weight: bold;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: @background;
+}
+
+#clock,
+#pulseaudio,
+#battery,
+#network {
+    color: @foreground;
+}
+
+tooltip {
+    padding: 8px;
+    border-radius: 1px;
+    color: @foreground;
+}
+
+#workspaces button {
+    padding: 7px 12px 7px 12px;
+    color: @accent;
+    background-color: @background;
+    border: none;
+}
+
+#workspaces button:hover {
+    background: none;
+    border: none;
+    border-radius: 1px;
+    border-color: transparent;
+    transition: none;
+}
+
+#workspaces button.active {
+    color: @foreground;
+}
+
+#custom-close, #custom-vol, #custom-net, #custom-bat {
+    color: @accent;
+}
+
+#clock,
+#workspaces {
+}

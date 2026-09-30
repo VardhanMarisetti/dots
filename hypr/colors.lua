@@ -1,0 +1,10 @@
+-- colors.lua
+local colors = {
+    wallpaper     = "/home/vm/Walls/141034_original_7680x3688.jpg",
+    background    = "rgb(251B1A)",
+    foreground    = "rgb(ECE4D2)",
+    accent        = "rgb(4C4F56)",
+    accent_bright = "rgb(A9B0C0)",
+}
+
+return colors

@@ -1,0 +1,82 @@
+@import 'colors.css';
+
+* {
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  padding: 0px 0px;
+}
+
+window#waybar {
+  background: rgba(0, 0, 0, 0.8);
+  /*border: 0px solid #ffffff;*/ /* 🟢 Border color (match this with window border color) */
+  border-radius: 4px;         /* For retro look */
+  margin: 10px 10px;          /* Top/Bottom, Left/Right */
+  padding: 4px;
+}
+
+tooltip {
+    padding: 8px;
+    border-radius: 4px;
+    color: @accent-bright;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+tooltip label {
+  padding: 0px 4px;
+}
+
+#workspaces button {
+  margin-left: 7px;
+  color: @accent;
+}
+
+/* #workspaces button.active {
+  color: @accent-bright;
+} */
+
+#workspaces button.empty {
+  color: @accent-dark;
+}
+
+#workspaces button.visible {
+  color: @accent-bright;
+}
+
+#workspaces button:hover {
+  color: @accent-bright;
+}
+
+#battery.charge, #pulseaudio.stereo, #custom-day-progress.low, #mpris.paused, #backlight.dim {
+  color: @accent-dark;
+}
+
+#battery.full, #pulseaudio.bt , #backlight.bright {
+  color: @accent;
+}
+
+#mpris.playing {
+  color: @accent-bright;
+}
+
+#battery, #pulseaudio, #network, #clock, #backlight, #mpris, #custom-day-progress {
+  color: @accent-bright;
+}
+
+#clock,
+#battery,
+#pulseaudio,
+#backlight,
+#network,
+#idle_inhibitor,
+#power-profiles-daemon,
+#tray,
+#mpris,
+#custom-power,
+#workspaces {
+}
+
+#network {
+  margin-right: 7px;
+}

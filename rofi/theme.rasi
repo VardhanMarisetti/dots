@@ -1,0 +1,77 @@
+@import "colors.rasi"
+
+* {
+  font:   "JetBrainsMono Nerd Font 12";
+
+  bg1: @background;
+  bg2: @background2;
+  fg0: @accent-bright;
+  red: rgba(255, 0, 0, 1);
+
+  background-color : transparent;
+  text-color       : @fg0;
+
+}
+
+window {
+  transparency: "real";
+  location : center;
+  width    : 440px;
+  x-offset : 0px;
+  y-offset : 0px;
+
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 0px;
+  border-color: @fg0;
+  border-radius: 4px;
+}
+
+inputbar {
+  enabled: true;
+  border: 0px;
+  border-color: @fg0;
+  border-radius: 4px;
+  background-color: #2B2B34CC;
+  padding  : 8px;
+  margin: 8px 8px 6px 8px;
+  children : [ entry ];
+}
+
+listview {
+  padding      : 0px;
+  margin       : 0px 8px 8px 8px;
+  lines        : 6;
+  columns      : 1;
+  scrollbar    : false;
+  fixed-height : false;
+  dynamic      : true;
+}
+
+entry {
+    placeholder: "";
+    placeholder-color: @fg0;
+}
+
+element {
+  padding : 8px;
+  spacing : 8px;
+}
+
+element-icon {
+  size: 0.8em;
+}
+
+element-text {
+  highlight: bold;
+  text-color: inherit;
+}
+
+element selected {
+  text-color       : rgba(0, 0, 0);
+  background-color : @fg0;
+  border-radius: 4px;
+}
+
+element active {
+  text-color: @fg0;
+}

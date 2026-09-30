@@ -1,0 +1,172 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 37,
+  "spacing": 5,
+  "margin-top": 6,
+  "margin-left": 6,
+  "margin-right": 6,
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    //"power-profiles-daemon",
+    //"backlight",
+    "pulseaudio",
+    "battery",
+    "network",
+    "custom/day-progress"
+    //"clock"
+  ],
+
+  "custom/test": {
+    "format": " battery_android_4 clock_loader_40"
+  },
+
+  "custom/day-progress": {
+    "format": "{}",
+    "exec": "~/.config/waybar/scripts/day-progress.sh",
+    "return-type": "json",
+    "interval": 60,
+    //"on-click": "swaync-client -t -sw",
+    "states": {
+      "low": 6,
+      "medium": 12,
+      "high": 18
+    }
+  },
+
+  "clock": {
+    "format": "{:%H%M}",
+    "tooltip-format": "{:%m-%d / %H%M}"
+    //"on-click": "swaync-client -t -sw"
+  },
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "active": "█",
+      //"persistent": "▅",
+      "empty": "▂",
+      "default": "▄"
+    },
+    //"sort-by-number": true,
+    "persistent-workspaces": { "*": 4 }
+  },
+
+  "custom/playerinfo": {
+      "format": "&lt; {} &gt;",
+      "exec": "~/.config/waybar/scripts/playerinfo.sh",
+      "escape": true,
+      "return-type": "json",
+      //"interval": 1,
+      "tooltip": true,
+      "on-click-middle": "playerctl play-pause",
+      "on-click-right": "playerctl next",
+      "on-click-left": "playerctl previous"
+  },
+
+  "custom/cava": {
+    "format": "{}",
+    "exec": "~/.config/waybar/scripts/cava-bar.sh",
+    "tooltip": false,
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next",
+    "on-click-middle": "playerctl previous"
+  },
+
+  "mpris": {
+    "format": "{artist} - {title}",
+    "player": "firefox",
+    "format-paused": "{artist} - {title}",
+    "format-stopped": "",
+    "tooltip": false,
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next",
+    "on-click-middle": "playerctl previous"
+  },
+
+  "custom/centerblocks": {
+    "exec": "~/.config/waybar/scripts/blocks_center.sh",
+    "interval": 60,
+    "format": "{}",
+    "format-alt-click": "left",
+    "on-click": "mode=$(cat /tmp/waybar_center_mode); echo $(( (mode+1) % 3 )) > /tmp/waybar_center_mode; pkill -RTMIN+9 waybar"
+  },
+
+  "idle_inhibitor": {
+    "format": "[{icon}]",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+      }
+  },
+
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "▅",
+      "performance": "█",
+      "balanced": "▅",
+      "power-saver": "▁"
+      }
+  },
+
+  "pulseaudio": {
+    "format": "{icon}",
+    "format-bluetooth": "{icon}",
+    "format-bluetooth-muted": "▁",
+    "format-muted": "▁",
+    "format-source": "MIC {volume}",
+    "scroll-step": 2,
+    "tooltip-format": "{desc} / {volume}",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-click-right": "pavucontrol",
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+    "states": {
+      "low": 20,
+      "medium": 50,
+      "high": 80
+    }
+  },
+
+  "backlight": {
+    "format": "{icon}",
+    "tooltip-format": "Display / {percent}",
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+  },
+
+  "network": {
+  //"interface": "wlp2*", // (Optional) To force the use of this>
+    "format-wifi": "{icon}",
+    "format-ethernet": "[{ipaddr}/{cidr}]",
+    "tooltip-format": "{essid} / {signalStrength}",
+    "on-click-right": "kitty -e nmtui",
+  //"format-linked": "{ifname} (No IP)",
+    "format-linked": "{icon}",
+    "format-disconnected": "▁",
+  //"format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+    "states": {
+      "low": 20,
+      "medium": 50,
+      "high": 80
+    }
+  },
+
+  "battery": {
+    "format": "{icon}",
+    "format-charging": "{icon}",
+    "format-plugged": "{icon}",
+    "tooltip-format": "{} / {capacity}",
+    "on-click-right": "kitty -e btop",
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+    "states": {
+      "low": 20,
+      "medium": 50,
+      "high": 80
+    }
+  }
+}

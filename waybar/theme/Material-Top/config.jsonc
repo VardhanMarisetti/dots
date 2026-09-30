@@ -1,0 +1,86 @@
+{
+  "layer": "top",
+  "position": "top",
+  "spacing": 0,
+  //"height": 36,
+  "margin-top": 6,
+  "margin-left": 6,
+  "margin-bottom": 0,
+  "margin-right": 6,
+  //"margin-right": -16,
+  "reload_style_on_change": true,
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    //"custom/clock",
+    "clock"
+  ],
+  "modules-right": [
+    "network",
+    "bluetooth",
+    "battery"
+  ],
+  "network": {
+    "format-disabled": "",
+    "format-wifi": "{icon}",
+    "format-ethernet": "lan",
+    "format-disconnected": "signal_wifi_off",
+    "format-icons": [
+      "signal_wifi_0_bar",
+      "network_wifi_1_bar",
+      "network_wifi_2_bar",
+      "network_wifi_3_bar",
+      "signal_wifi_4_bar"
+    ],
+    "tooltip-format-wifi": "{essid} - {signalStrength}%",
+    "on-click": "kitty -e nmtui"
+  },
+  "bluetooth": {
+    "format-disabled": "",
+    "format-on": "bluetooth",
+    "format-no-controller": "",
+    "format-off": "bluetooth_disabled",
+    "format-connected": "bluetooth_connected",
+    "tooltip-format-connected": "{device_alias}",
+    "tooltip-format-connected-battery": "{device_alias} - {device_battery_percentage}%",
+    "on-click": "kitty -e bluetui"
+  },
+  "battery": {
+    "format": "{icon}",
+    "format-icons": [
+      "battery_0_bar",
+      "battery_1_bar",
+      "battery_2_bar",
+      "battery_3_bar",
+      "battery_4_bar",
+      "battery_5_bar",
+      "battery_6_bar",
+      "battery_full"
+    ],
+    "tooltip-format": "{timeTo} - {capacity}%",
+    "on-click": "kitty -e btop",
+    "states": {
+      "warning": 20,
+      "critical": 10
+    }
+  },
+  "hyprland/workspaces": {
+    "persistent-workspaces": {
+      "*": 4
+    }
+  },
+  "custom/clock": {
+    "format": "calendar_clock",
+    "interval": "once"
+  },
+  "clock": {
+    "format": "{:%H%M}",
+    "tooltip-format": "{calendar}",
+    "calendar": {
+      "format": {
+        "today": "<u>{}</u>"
+      }
+    }
+  }
+}

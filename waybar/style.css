@@ -1,0 +1,55 @@
+@import 'colors.css';
+
+* {
+  font-family: JetBrainsMono Nerd Font;
+  border: none;
+  padding: 3px;
+}
+
+window#waybar {
+  background: rgba(0, 0, 0, 0.8);
+  /*border: 0px solid #ffffff;*/ /* 🟢 Border color (match this with window border color) */
+  border-radius: 4px;
+}
+
+tooltip {
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 4px;
+  color: @accent-bright;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+#clock {
+  font-size: 20px;
+  color: @accent-bright;
+  font-family: JetBrainsMono Nerd Font;
+}
+
+#workspaces button {
+  font-family: Material Symbols Rounded;
+  font-size: 18px;
+  color: @accent-dark;
+  padding: 15px 2px;
+}
+
+#workspaces button.empty {
+  color: @accent-dark;
+}
+
+#workspaces button.visible {
+  color: @accent-bright;
+}
+
+#workspaces button:hover {
+  color: @accent-bright;
+}
+
+#network,
+#battery,
+#pulseaudio,
+#backlight {
+  font-size: 20px;
+  color: @accent-bright;
+  font-family: Material Symbols Rounded;
+}

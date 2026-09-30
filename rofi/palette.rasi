@@ -1,0 +1,71 @@
+@import "colors.rasi"
+
+* {
+  font:   "JetBrainsMono Nerd Font SemiBold 20";
+  bg1: @background;
+  fg0: @accent;
+  red: rgba(255, 0, 0, 1);
+
+  background-color : transparent;
+  text-color       : @fg0;
+}
+
+window {
+  transparency: "real";
+  location : center;
+  width    : 283px;
+  x-offset : 0px;
+  y-offset : 0px;
+  padding: 10px;
+
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 0px;
+  border-color: @fg0;
+  border-radius: 4px;
+}
+
+inputbar {
+  enabled: false;
+  transparency: "real";
+  border: 1px;
+  border-color: @fg0;
+  border-radius: 4px;
+  padding  : 0px;
+  margin: 0px;
+}
+
+
+listview {
+  padding      : 0px;
+  margin       : 0px;
+  lines        : 4;
+  columns      : 1;
+  scrollbar    : false;
+  fixed-height : false;
+  flow         : horizontal;
+  dynamic      : true;
+}
+
+element {
+  padding : 0px;
+  spacing : 0px;
+  border  : 4px;
+  border-color: transparent;
+  margin  : 0px;
+  children: [ element-text ];
+}
+
+element selected {
+  text-color       : rgba(0, 0, 0);
+  background-color : transparent;
+  border-color     : @accent-bright;
+  border-radius: 2px;
+  padding : 0px;
+  spacing : 0px;
+  border  : 2px;
+  margin  : 0px;
+}
+
+element-text {
+  markup          : true;
+}

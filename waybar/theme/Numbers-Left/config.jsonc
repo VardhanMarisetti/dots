@@ -1,0 +1,67 @@
+{
+  "layer": "top",
+  "position": "left",
+  "spacing": 0,
+  "margin-top": 6,
+  "margin-left": 6,
+  "margin-bottom": 6,
+  "margin-right": 0,
+  "reload_style_on_change": true,
+  "modules-left": [
+    "battery",
+    "pulseaudio",
+    "network"
+  ],
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
+  "modules-right": [
+    "network",
+    "clock"
+  ],
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      //●○◉󱓻󱓼,
+      "active": "●",
+      "empty": "○",
+      "default": "●"
+    },
+  "persistent-workspaces": {
+      "*": 4
+    }
+  },
+  "network": {
+    "format-disabled": "",
+    "format-wifi": "━━",
+    "format-ethernet": "━━",
+    "format-disconnected": "━",
+    "tooltip-format-wifi": "{essid} - {signalStrength}%",
+    "on-click-right": "kitty -e nmtui"
+  },
+  "pulseaudio": {
+    "format": "{volume}",
+    "format-muted": "00",
+    "tooltip-format": "{desc} / {volume}",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-click-right": "kitty -e wiremixer"
+    },
+  "battery": {
+    "format": "{capacity}",
+    "tooltip-format": "{timeTo} - {capacity}%",
+    "on-click-right": "kitty -e btop",
+    "states": {
+      "warning": 20,
+      "critical": 10
+    }
+  },
+  "clock": {
+    "format": "{:%H\n%M}",
+    "tooltip-format": "{calendar}",
+    "calendar": {
+      "format": {
+        "today": "<u>{}</u>"
+      }
+    }
+  }
+}

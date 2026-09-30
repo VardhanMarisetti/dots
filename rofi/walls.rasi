@@ -1,0 +1,72 @@
+@import 'colors.rasi'
+
+configuration {
+    show-icons: true;
+}
+
+window {
+    /*fullscreen: true;*/
+    width: 1880px;
+    height: 722px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    /*margin: 200px 20px 150px 20px;*/
+    border: 0px;
+    border-radius: 4px;
+    border-color: transparent;
+}
+
+mainbox {
+    children: [inputbar, listview];
+}
+
+listview {
+    border: 0;
+    lines: 1;
+    columns: 6;
+    spacing: 12px;
+    cycle: false;
+    padding: 0px;
+    scrollbar: false;
+    flow: horizontal;
+    disable-history: true;
+    fixed-columns: true;
+    fixed-height: true;
+    dynamic: true;
+}
+
+inputbar {
+    enabled: false;
+}
+
+element {
+    padding: 0;
+    border-radius: 4px;
+    children: [element-icon];
+    border-color: @accent;
+}
+
+element normal.normal {
+    border-color: @accent;
+    background: transparent;
+    background-color: transparent;
+}
+
+element alternate.normal {
+    border-color: @accent;
+    background: transparent;
+    background-color: transparent;
+}
+
+element selected.normal {
+    border: 2px;
+    border-color: @accent-bright;
+    background: transparent;
+    background-color: transparent;
+}
+
+element-icon {
+    expand: true;
+    size: 300px 700px;
+    cursor: pointer;
+}
